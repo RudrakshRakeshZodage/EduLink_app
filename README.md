@@ -14,56 +14,42 @@ mobile and desktop Flutter project used to build EduLink.
 
 ## Quickstart
 
-Prerequisites: Flutter SDK, Android Studio / Xcode (for mobile builds), and
-an editor such as VS Code.
+Prerequisites: Flutter SDK and a supported platform toolchain (Android/iOS).
 
-1. Clone the repo:
+1. Clone the repo and install deps:
 
 	git clone https://github.com/RudrakshRakeshZodage/EduLink_app.git
 	cd EduLink_app
-
-2. Install dependencies and run the app:
-
 	flutter pub get
+
+2. Run the app (example for desktop/web):
+
 	flutter run
 
-3. Open with device selector (Android/iOS/web/desktop) or run:
-
-	flutter run -d chrome
-
-## Secrets & API keys
-
-Do NOT hard-code API keys in source. The project reads the OpenAI key from a
-dart-define at runtime. Examples:
+3. To use the OpenAI integration locally, provide your key at runtime:
 
 ```powershell
 # Windows PowerShell
 flutter run --dart-define=OPENAI_API_KEY=sk-REPLACE_WITH_YOUR_KEY
 ```
 
-Or set an environment variable in CI or your shell and pass it via your build
-system or GitHub Actions secrets.
+## Notes on secrets
 
-If an API key was accidentally committed, rotate it immediately — this
-repository had a key committed and it was removed from history; rotate any
-compromised keys.
+- Never commit API keys or secrets. Use `--dart-define` for local runs and
+  store secrets in your CI provider's secret store (e.g., GitHub Secrets).
+- If a key was committed accidentally, rotate it immediately.
 
-## Project layout
+## Minimal project layout
 
-- `lib/` — Dart source code (screens, services, models, widgets)
-- `android/`, `ios/`, `web/`, `linux/`, `macos/`, `windows/` — platform folders
-- `assets/` — images and other static assets
-- `test/` — unit/widget tests
+- `lib/` — app source (screens, services, models, widgets)
+- `assets/` — images and static assets
+- platform folders — `android/`, `ios/`, `web/`, `linux/`, `macos/`, `windows/`
 
-## Contributing
+---
 
-Please open issues or pull requests. For sensitive data, use GitHub Secrets or
-environment variables rather than committing keys.
-
-## License
-
-This project doesn't include a license file. Add one if you plan to publish
-this repository publicly.
+This README focuses on the essentials: features, quickstart, and secrets
+best-practices. Tell me if you want a longer developer guide or a
+`CONTRIBUTING.md` next.
 
 ---
 
